@@ -1,0 +1,74 @@
+.root {
+  background-color: #ffffff;
+  width: 95vw;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 2rem;
+
+  /*REMOVE*/
+  min-height: 40rem;
+  border-radius: 1rem;
+}
+
+.thead {
+  background-color: #f3f4fa;
+  width: 100%;
+  margin: 2rem 0;
+  padding: 1rem 1rem;
+  border-radius: 4px;
+}
+
+.tr {
+  display: grid;
+  grid-template-columns: 0.5fr repeat(8, 1fr);
+}
+
+.tableData {
+  display: grid;
+  grid-template-columns: 0.5fr repeat(8, 1fr);
+  padding: 0.8rem 0;
+  cursor: pointer;
+}
+
+.tableData:nth-child(2n) {
+  background-color: #fafafc;
+}
+
+.tableData:hover {
+  background-color: #f3f4fa;
+}
+
+.th {
+  font-size: 1.5rem;
+  color: #afafc2;
+  font-weight: 700;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+}
+
+.td {
+  font-size: 1.5rem;
+  color: #afafc2;
+  font-weight: 400;
+  padding: 0 0.5rem;
+}
+
+.tableIcon {
+  margin-right: 0.6rem;
+  color: #000000;
+}
+/* .tableTitle {
+} */
+
+.imgBox {
+  width: 3rem;
+  height: 3rem;
+  display: block;
+  object-fit: cover;
+}
+.profilePic {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}

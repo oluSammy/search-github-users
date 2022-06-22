@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.keyword {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.keywordSpan {
+  color: #211fcc;
+}
+
+.pageCountText {
+  font-size: 1.8rem;
+}
+
+.pageCountTextSpan {
+  color: #211fcc;
+}

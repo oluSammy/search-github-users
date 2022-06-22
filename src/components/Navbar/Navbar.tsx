@@ -1,6 +1,5 @@
 import octocat from "../../assets/images/Octocat.png";
 import styles from "./navbar.module.css";
-// import { BiSearch } from 'react-icons/bi'
 
 const Navbar = () => {
   return (
@@ -9,7 +8,7 @@ const Navbar = () => {
         <figure className={styles.imgContainer}>
           <img className={styles.navImg} src={octocat} alt="octocat" />
         </figure>
-        <h1 className={styles.title}>Github Users</h1>
+        <h1 className={styles.title}>Octocat</h1>
       </div>
       <form className={styles.navForm}>
         <input
