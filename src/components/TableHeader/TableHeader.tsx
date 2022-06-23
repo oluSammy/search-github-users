@@ -11,7 +11,7 @@ const TableHeader = () => {
     currentPage === 1 ? currentPage : (currentPage - 1) * perPage + 1;
   const lastIndex =
     currentPage === 1
-      ? currentPage * perPage
+      ? currentPage * users.length
       : (currentPage - 1) * perPage + users.length;
 
   return (
