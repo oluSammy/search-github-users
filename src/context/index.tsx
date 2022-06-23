@@ -11,7 +11,7 @@ export interface IUser {
   public_repos: number;
   company: string;
   name: string;
-  url: string;
+  html_url: string;
   id: string;
 }
 
@@ -53,11 +53,19 @@ const AppProvider = (props: IProp) => {
 
       const { data } = await axios.get(
         `${constants.API_URL}q=${searchQuery}&per_page=${constants.PER_PAGE}&page=${page}`,
-        config
+        {
+          headers: {
+            Authorization: `token ${process.env.REACT_APP_API_KEY}`,
+          },
+        }
       );
       const usersUrl = data.items.map((user: { url: string }) => user.url);
       const usersData = usersUrl.map(async (url: string) => {
-        const { data } = await axios.get(url, config);
+        const { data } = await axios.get(url, {
+          headers: {
+            Authorization: `token ${process.env.REACT_APP_API_KEY}`,
+          },
+        });
         return data;
       });
       const allUsers = await Promise.all(usersData);

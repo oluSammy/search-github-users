@@ -16,7 +16,7 @@ const TableRow: React.FC<IProp> = ({
     followers,
     following,
     avatar_url,
-    url,
+    html_url,
   },
 }) => {
   return (
@@ -33,7 +33,9 @@ const TableRow: React.FC<IProp> = ({
       <div className={styles.td}>{public_gists}</div>
       <div className={styles.td}>{followers}</div>
       <div className={styles.td}>{following}</div>
-      <div className={styles.td}>view user</div>
+      <a href={html_url} target="__" className={styles.td}>
+        view user
+      </a>
     </div>
   );
 };
