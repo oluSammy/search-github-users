@@ -53,19 +53,11 @@ const AppProvider = (props: IProp) => {
 
       const { data } = await axios.get(
         `${constants.API_URL}q=${searchQuery}&per_page=${constants.PER_PAGE}&page=${page}`,
-        {
-          headers: {
-            Authorization: `token ${process.env.REACT_APP_API_KEY}`,
-          },
-        }
+        config
       );
       const usersUrl = data.items.map((user: { url: string }) => user.url);
       const usersData = usersUrl.map(async (url: string) => {
-        const { data } = await axios.get(url, {
-          headers: {
-            Authorization: `token ${process.env.REACT_APP_API_KEY}`,
-          },
-        });
+        const { data } = await axios.get(url, config);
         return data;
       });
       const allUsers = await Promise.all(usersData);
