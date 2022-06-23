@@ -10,43 +10,43 @@ import { RiUserFollowLine, RiGitRepositoryCommitsLine } from "react-icons/ri";
 const Header = () => {
   return (
     <div className={styles.thead}>
-      <tr className={styles.tr}>
-        <th className={styles.th}>
+      <div className={styles.tr}>
+        <div className={styles.th}>
           <CgProfile className={styles.tableIcon} />
-        </th>
-        <th className={styles.th}>
+        </div>
+        <div className={styles.th}>
           <BiCodeCurly className={styles.tableIcon} />
           <span className={styles.tableTitle}>Username </span>
-        </th>
-        <th className={styles.th}>
+        </div>
+        <div className={styles.th}>
           <BiCode className={styles.tableIcon} />
           <span className={styles.tableTitle}>name </span>
-        </th>
-        <th className={styles.th}>
+        </div>
+        <div className={styles.th}>
           <IoGitCommit className={styles.tableIcon} />
           <span className={styles.tableTitle}>company </span>
-        </th>
-        <th className={styles.th}>
+        </div>
+        <div className={styles.th}>
           <RiGitRepositoryCommitsLine className={styles.tableIcon} />
           <span className={styles.tableTitle}>repos </span>
-        </th>
-        <th className={styles.th}>
+        </div>
+        <div className={styles.th}>
           <GoGist className={styles.tableIcon} />
           <span className={styles.tableTitle}>gists </span>
-        </th>
-        <th className={styles.th}>
+        </div>
+        <div className={styles.th}>
           <RiUserFollowLine className={styles.tableIcon} />
           <span className={styles.tableTitle}>followers </span>
-        </th>
-        <th className={styles.th}>
+        </div>
+        <div className={styles.th}>
           <MdOutlineFollowTheSigns className={styles.tableIcon} />
           <span className={styles.tableTitle}>following </span>
-        </th>
-        <th className={styles.th}>
+        </div>
+        <div className={styles.th}>
           <BiLinkExternal className={styles.tableIcon} />
           <span className={styles.tableTitle}>view </span>
-        </th>
-      </tr>
+        </div>
+      </div>
     </div>
   );
 };

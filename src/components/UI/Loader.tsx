@@ -20,8 +20,8 @@ export const TableSmallLoader: React.FunctionComponent<any> = (props) => {
 };
 
 export const TableLoader: React.FunctionComponent = (props) => (
-  <tr className={styles.wikiLoader}>
-    <td className={cx(styles.x, styles.loaderPadding)}>
+  <div className={styles.wikiLoader}>
+    <div className={cx(styles.x, styles.loaderPadding)}>
       <TableSmallLoader width={1400} className={styles.tableLoader} />
       <TableSmallLoader width={1400} className={styles.tableLoader} />
       <TableSmallLoader width={1400} className={styles.tableLoader} />
@@ -32,6 +32,6 @@ export const TableLoader: React.FunctionComponent = (props) => (
       <TableSmallLoader width={1400} className={styles.tableLoader} />
       <TableSmallLoader width={1400} className={styles.tableLoader} />
       <TableSmallLoader width={1400} className={styles.tableLoader} />
-    </td>
-  </tr>
+    </div>
+  </div>
 );

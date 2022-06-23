@@ -20,21 +20,21 @@ const TableRow: React.FC<IProp> = ({
   },
 }) => {
   return (
-    <tr className={styles.tableData}>
-      <td className={styles.td}>
+    <div className={styles.tableData}>
+      <div className={styles.td}>
         <figure className={styles.imgBox}>
           <img className={styles.profilePic} src={avatar_url} alt={name} />
         </figure>
-      </td>
-      <td className={styles.td}>{login}</td>
-      <td className={styles.td}>{name ? name : "--"}</td>
-      <td className={styles.td}>{company ? company : "--"}</td>
-      <td className={styles.td}>{public_repos}</td>
-      <td className={styles.td}>{public_gists}</td>
-      <td className={styles.td}>{followers}</td>
-      <td className={styles.td}>{following}</td>
-      <td className={styles.td}>view user</td>
-    </tr>
+      </div>
+      <div className={styles.td}>{login}</div>
+      <div className={styles.td}>{name ? name : "--"}</div>
+      <div className={styles.td}>{company ? company : "--"}</div>
+      <div className={styles.td}>{public_repos}</div>
+      <div className={styles.td}>{public_gists}</div>
+      <div className={styles.td}>{followers}</div>
+      <div className={styles.td}>{following}</div>
+      <div className={styles.td}>view user</div>
+    </div>
   );
 };
 

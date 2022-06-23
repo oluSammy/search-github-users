@@ -10,12 +10,24 @@
   font-weight: 600;
 }
 
+@media only screen and (max-width: 401px) {
+  .keyword {
+    font-size: 1.6rem;
+  }
+}
+
 .keywordSpan {
   color: #211fcc;
 }
 
 .pageCountText {
   font-size: 1.8rem;
+}
+
+@media only screen and (max-width: 401px) {
+  .pageCountText {
+    font-size: 1.4rem;
+  }
 }
 
 .pageCountTextSpan {

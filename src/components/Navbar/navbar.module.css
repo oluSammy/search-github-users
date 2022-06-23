@@ -6,6 +6,13 @@
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 400px) {
+  .root {
+    padding: 1rem 1rem;
+  }
+}
+
+
 .title {
   font-size: 2.5rem;
   font-weight: 900;

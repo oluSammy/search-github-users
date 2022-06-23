@@ -1,11 +1,6 @@
 .root {
-  background-color: #ffffff;
-  width: 95vw;
-  margin: 0 auto;
-  margin-top: 2rem;
-  padding: 2rem;
-  min-height: 57rem;
-  border-radius: 1rem;
+  
+  min-width: 95rem;
 }
 
 .thead {

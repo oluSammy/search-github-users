@@ -13,9 +13,31 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
+@media only screen and (max-width: 1003px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media only screen and (max-width: 541px) {
+  html {
+    font-size: 40%;
+  }
+}
+
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   background-color: #f3f4fa;
   color: #737373;
+}
+
+.table-wrapper {
+  background-color: #ffffff;
+  width: 95vw;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 2rem;
+  min-height: 57rem;
+  border-radius: 1rem;
 }
