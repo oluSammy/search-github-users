@@ -1,0 +1,26 @@
+.wikiLoader {
+  display: flex;
+  flex-direction: column;
+}
+
+.wikiLoader > .header {
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.wikiLoader > .body,
+.wikiLoader > .footer {
+  flex-direction: column;
+}
+
+.wikiLoader > .footer {
+  margin-top: 30vh;
+}
+
+.tableLoader {
+  margin: "0 auto";
+}
+
+.loaderPadding {
+  padding-top: 30px;
+}

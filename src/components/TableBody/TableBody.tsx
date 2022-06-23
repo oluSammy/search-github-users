@@ -1,125 +1,15 @@
-import React from "react";
+import { useContext } from "react";
+import { AppContext } from "../../context";
 import styles from "../Table/table.module.css";
-import TableRow, { IUser } from "../TableRow/TableRow";
-
-const data = [
-  {
-    pic: "https://avatars.githubusercontent.com/u/31919592?v=4",
-    username: "olusammy",
-    name: "olumorin samuel",
-    company: "Decagon",
-    repos: 220,
-    gists: 23,
-    followers: 30,
-    following: 333,
-    view: "https://github.com/Olusamimaths",
-  },
-  {
-    pic: "https://avatars.githubusercontent.com/u/31919592?v=4",
-    username: "olusammy",
-    name: "olumorin samuel",
-    company: "Decagon",
-    repos: 220,
-    gists: 23,
-    followers: 30,
-    following: 333,
-    view: "https://github.com/Olusamimaths",
-  },
-  {
-    pic: "https://avatars.githubusercontent.com/u/31919592?v=4",
-    username: "olusammy",
-    name: "olumorin samuel",
-    company: "Decagon",
-    repos: 220,
-    gists: 23,
-    followers: 30,
-    following: 333,
-    view: "https://github.com/Olusamimaths",
-  },
-  {
-    pic: "https://avatars.githubusercontent.com/u/31919592?v=4",
-    username: "olusammy",
-    name: "olumorin samuel",
-    company: "Decagon",
-    repos: 220,
-    gists: 23,
-    followers: 30,
-    following: 333,
-    view: "https://github.com/Olusamimaths",
-  },
-  {
-    pic: "https://avatars.githubusercontent.com/u/31919592?v=4",
-    username: "olusammy",
-    name: "olumorin samuel",
-    company: "Decagon",
-    repos: 220,
-    gists: 23,
-    followers: 30,
-    following: 333,
-    view: "https://github.com/Olusamimaths",
-  },
-  {
-    pic: "https://avatars.githubusercontent.com/u/31919592?v=4",
-    username: "olusammy",
-    name: "olumorin samuel",
-    company: "Decagon",
-    repos: 220,
-    gists: 23,
-    followers: 30,
-    following: 333,
-    view: "https://github.com/Olusamimaths",
-  },
-  {
-    pic: "https://avatars.githubusercontent.com/u/31919592?v=4",
-    username: "olusammy",
-    name: "olumorin samuel",
-    company: "Decagon",
-    repos: 220,
-    gists: 23,
-    followers: 30,
-    following: 333,
-    view: "https://github.com/Olusamimaths",
-  },
-  {
-    pic: "https://avatars.githubusercontent.com/u/31919592?v=4",
-    username: "olusammy",
-    name: "olumorin samuel",
-    company: "Decagon",
-    repos: 220,
-    gists: 23,
-    followers: 30,
-    following: 333,
-    view: "https://github.com/Olusamimaths",
-  },
-  {
-    pic: "https://avatars.githubusercontent.com/u/31919592?v=4",
-    username: "olusammy",
-    name: "olumorin samuel",
-    company: "Decagon",
-    repos: 220,
-    gists: 23,
-    followers: 30,
-    following: 333,
-    view: "https://github.com/Olusamimaths",
-  },
-  {
-    pic: "https://avatars.githubusercontent.com/u/31919592?v=4",
-    username: "olusammy",
-    name: "olumorin samuel",
-    company: "Decagon",
-    repos: 220,
-    gists: 23,
-    followers: 30,
-    following: 333,
-    view: "https://github.com/Olusamimaths",
-  },
-];
+import TableRow from "../TableRow/TableRow";
 
 const TableBody = () => {
+  const { users } = useContext(AppContext);
+
   return (
     <div className={styles.tbody}>
-      {data.map((user: IUser, idx: number) => (
-        <TableRow key={idx} user={user} />
+      {users.map((user) => (
+        <TableRow key={user.id} user={user} />
       ))}
     </div>
   );

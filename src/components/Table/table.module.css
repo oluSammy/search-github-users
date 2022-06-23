@@ -4,9 +4,7 @@
   margin: 0 auto;
   margin-top: 2rem;
   padding: 2rem;
-
-  /*REMOVE*/
-  min-height: 40rem;
+  min-height: 57rem;
   border-radius: 1rem;
 }
 
@@ -71,4 +69,18 @@
   height: 100%;
   width: 100%;
   border-radius: 50%;
+}
+
+.instructionContainer {
+  text-align: center;
+  margin-top: 15rem;
+}
+
+.instructionTitle {
+  font-size: 3rem;
+}
+
+.subTitle {
+  font-size: 1.6rem;
+  margin-top: 2rem;
 }

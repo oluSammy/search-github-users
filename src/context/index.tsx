@@ -1,23 +1,18 @@
-import React, {
-  useState,
-  useEffect,
-  createContext,
-  useCallback,
-  useContext,
-} from "react";
+import React, { useState, createContext, useCallback } from "react";
 import axios from "axios";
 import constants from "../constants";
 
 export interface IUser {
-  username: string;
-  avatar: string;
+  login: string;
+  avatar_url: string;
   followers: number;
   following: number;
-  gists: number;
-  repos: number;
+  public_gists: number;
+  public_repos: number;
   company: string;
   name: string;
   url: string;
+  id: string;
 }
 
 interface IProp {
@@ -31,9 +26,10 @@ interface prop {
   searchQuery: string;
   currentPage: number;
   totalPages: number;
+  fetchUsers: (searchQuery: string, page: number) => void;
 }
 
-const AppContext = createContext({} as prop);
+export const AppContext = createContext({} as prop);
 
 const AppProvider = (props: IProp) => {
   const [users, setUsers] = useState<IUser[] | []>([]);
@@ -47,20 +43,37 @@ const AppProvider = (props: IProp) => {
     try {
       setIsLoading(true);
       setError("");
-      const users = await axios.get(
-        `${constants.API_URL}${searchQuery}&per_page=${constants.PER_PAGE}`
+      setSearchQuery(searchQuery);
+      const { data } = await axios.get(
+        `${constants.API_URL}q=${searchQuery}&per_page=${constants.PER_PAGE}&page=1`
       );
+      const usersUrl = data.items.map((user: { url: string }) => user.url);
+      const usersData = usersUrl.map(async (url: string) => {
+        const { data } = await axios.get(url);
+        return data;
+      });
+      const allUsers = await Promise.all(usersData);
+      setTotalPages(data.total_count);
+      setCurrentPage(page);
+      setUsers(allUsers);
+      setIsLoading(false);
     } catch (e: any) {
       setIsLoading(false);
       setError("an error occurred");
     }
   }, []);
 
-  useEffect(() => {}, []);
-
   return (
     <AppContext.Provider
-      value={{ users, isLoading, error, searchQuery, currentPage, totalPages }}
+      value={{
+        users,
+        isLoading,
+        error,
+        searchQuery,
+        currentPage,
+        totalPages,
+        fetchUsers,
+      }}
     >
       {props.children}
     </AppContext.Provider>
